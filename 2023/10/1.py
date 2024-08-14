@@ -49,7 +49,8 @@ def find_furthest_pos(input_map, cur_point):
         cur_pipe = input_map[cur_x][cur_y]
         empty_str = ''
 
-        print(f'cur pos:\n {input_map[cur_x - 1][cur_y] if cur_x >=1 else empty_str}\n{input_map[cur_x][cur_y - 1] if cur_y > 0 else empty_str}{input_map[cur_x][cur_y]}{input_map[cur_x][cur_y + 1] if cur_y + 1 < width else empty_str}\n {input_map[cur_x + 1][cur_y] if cur_x + 1 < height else empty_str}')
+        print(
+            f'cur pos:\n {input_map[cur_x - 1][cur_y] if cur_x >= 1 else empty_str}\n{input_map[cur_x][cur_y - 1] if cur_y > 0 else empty_str}{input_map[cur_x][cur_y]}{input_map[cur_x][cur_y + 1] if cur_y + 1 < width else empty_str}\n {input_map[cur_x + 1][cur_y] if cur_x + 1 < height else empty_str}')
 
         for t_x, t_y in directions_dictionary[cur_pipe]:
             n_x, n_y = cur_x + t_x, cur_y + t_y
@@ -70,7 +71,8 @@ def find_furthest_pos(input_map, cur_point):
     return furthest_pos
 
 
-input_file = "input.txt"
-pipe_map = read_map(input_file)
-starting_point = get_starting_point(pipe_map)
-print(find_furthest_pos(pipe_map, starting_point))
+def part_1():
+    input_file = "input.txt"
+    pipe_map = read_map(input_file)
+    starting_point = get_starting_point(pipe_map)
+    print(find_furthest_pos(pipe_map, starting_point))
